@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>灯箱售后自助中心</title>
+<style>
+:root {
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --line:#e2e8f0;
+  --ink:#0f172a;
+  --ink2:#64748b;
+  --brand:#14532d;
+  --brand-light:#dcfce7;
+  --radius:14px;
+}
+* {box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body {
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:#f1f5f9;
+  color:var(--ink);
+  min-height:100vh;
+  padding-bottom:40px;
+  font-size:16px;
+  line-height:1.55;
+}
+.header {
+  background:#fff;
+  padding:16px 16px 12px;
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:40;
+}
+.header h1 {font-size:26px;font-weight:700;text-align:center;margin-bottom:10px;}
+.notice {
+  background:#fffbeb;border:1px solid #fde68a;color:#92400e;padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.55;margin-top:8px;
+}
+.main {padding:16px;}
+.type-section {margin-bottom:16px;}
+.type-section h2 {font-size:16px;margin-bottom:12px;color:#334155;}
+.type-grid {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.type-btn {
+  background:#fff;border:2px solid var(--line);border-radius:12px;padding:18px 10px;text-align:center;
+  font-size:15px;font-weight:600;cursor:pointer;min-height:72px;display:flex;align-items:center;justify-content:center;
+}
+.type-btn.active {border-color:var(--brand);background:var(--brand-light);color:var(--brand);}
+.content-view {display:none;}
+.content-view.show {display:block;}
+.back-bar {
+  display:flex;align-items:center;gap:16px;margin-bottom:16px;padding:10px 0;
+}
+.back-btn {
+  background:var(--brand);color:#fff;border:none;border-radius:20px;padding:8px 20px;font-size:15px;font-weight:600;cursor:pointer;text-align:center;min-width:70px;
+}
+.page-title {font-size:18px;font-weight:700;}
+.qa-block {
+  background:#fff;border-radius:14px;padding:16px;margin-bottom:14px;border:1px solid var(--line);
+}
+.qa-block h3 {font-size:16px;font-weight:700;margin-bottom:10px;color:var(--brand);}
+.qa-block p {margin:8px 0;}
+.qa-block img {max-width:100%;width:auto;max-height:280px;height:auto;border-radius:10px;margin:10px auto;display:block;object-fit:contain;}
+.video-placeholder {
+  background:#f1f5f9;border:1.5px dashed #cbd5e1;border-radius:10px;padding:20px 12px;text-align:center;color:var(--ink2);margin:12px 0;font-size:14px;
+}
+.steps {margin:8px 0;padding-left:20px;}
+.steps li {margin:8px 0;}
+.footer {text-align:center;font-size:13px;color:var(--ink2);margin-top:24px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>灯箱售后自助中心</h1>
+  <div class="notice" style="font-size:15px;font-weight:600;line-height:1.55;">
+    <div style="flex:1;min-width:220px;text-align:left;">
+      公告：软膜容易被锋利的工具划破，在拆包裹时要特别注意小心，用刀划破不售后哈，请知悉！<br>
+      温馨提醒：在安装师傅上门之前确认货物完好！
+    </div>
+    
+  </div>
+</div>
+<div class="main">
+  <div id="home" class="content-view show">
+    <div class="type-section">
+      <h2>选择灯箱类型 · 安装教程</h2>
+      <div class="type-grid">
+        <div class="type-btn" data-type="soft">软膜灯箱</div>
+        <div class="type-btn" data-type="labu">拉布灯箱</div>
+        <div class="type-btn" data-type="m3">3M灯箱</div>
+        <div class="type-btn" data-type="common">通用问题</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 软膜灯箱 全展开 -->
+  <div id="soft" class="content-view">
+    <div class="back-bar" style="flex-direction:column;align-items:flex-start;gap:6px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="back-btn" onclick="showHome()">返回</button>
+        <div class="page-title">软膜灯箱</div>
+      </div>
+      <div style="color:#dc2626;font-size:15px;font-weight:800;text-align:left;line-height:1.5;">
+        因业务结构调整，淘宝端不处理售后，有问题直接联系微信对接人，感谢配合！
+      </div>
+    </div>
+    <div class="qa-block" style="font-size:17px;">
+      <h3 style="font-size:18px;">组装灯箱顺序</h3>
+      <ol class="steps" style="font-size:16.5px;line-height:1.7;">
+        <li>组装边框+装背板</li>
+        <li>也可以先把边框上墙后再装背板<br><small style="color:#64748b;">（自备上墙螺丝，因墙面基面的不同，所用的螺丝也不同）</small></li>
+        <li>固定灯条必须上螺丝+接线+测灯</li>
+        <li>最后安装灯膜</li>
+      </ol>
+    </div>
+    <div class="qa-block"><h3>Q1. 怎么没有发背板？</h3><p>最外层黑色是背板，请勿以为是包装把它扔掉！</p><img src="images/img1.png" alt="背板说明"></div>
+    <div class="qa-block"><h3>Q2. 截断的型材怎么装？</h3><p>两个一大一小的直角码，用平头螺丝固定。</p><img src="images/img2.png" alt="型材安装"></div>
+    <div class="qa-block"><h3>Q3. 用哪种螺丝安装？灯条一定得用螺丝固定</h3><p>尖头螺丝用于固定灯条和背板，平头螺丝固定边框型材。灯条一定要用螺丝固定。</p><img src="images/img3.png" alt="螺丝说明"></div>
+    <div class="qa-block">
+      <h3>Q4. 怎么组装整体灯箱及怎么上墙面</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/shangqiang_anzhuang.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/shangqiang_anzhuang.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block"><h3>Q5. 背板怎么装？</h3><p>安装背板用尖头螺丝，从灯箱背面往里面固定住背板。</p><img src="images/img4.png" alt="背板安装"></div>
+    <div class="qa-block"><h3>Q6. 背板铺不平怎么解决？</h3><p>两块背板用胶纸粘好，上墙再多打几个螺丝固定直至平整。</p><img src="images/img5.png" alt="背板平整"></div>
+    <div class="qa-block"><h3>Q7. 没有看到排灯图？</h3><p>包装上这个是排灯图，请勿扔掉！</p><img src="images/img6.png" alt="排灯图"></div>
+    <div class="qa-block"><h3>Q8. 灯条过长不够位置怎么排？</h3><p>根据排灯图按需剪线，一头多余的线直接剪掉，另一头预留出来接线。</p><img src="images/img7.png" alt="灯条剪线"></div>
+    <div class="qa-block"><h3>Q9. 灯条线怎么剪</h3><p>（答案待补充）</p></div>
+    <div class="qa-block">
+      <h3>Q10. 室内灯怎么接线？（注意室内与室外接线不同）</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/shinei_jiedian.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/shinei_jiedian.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block">
+      <h3>Q11. 室外灯怎么接线？（注意室内与室外接线不同）</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/shiwai_jiedian.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/shiwai_jiedian.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block">
+      <h3>Q12. 插头怎么接线？（插头是选配件，自备插头）</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/chatou.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/chatou.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block"><h3>Q13. 收到的软膜是皱的可以熨烫吗？</h3><p>广告布皱了咋整？斜对角安装拉平即可，不可熨烫。</p><img src="images/img8.png" alt="软膜皱纹处理"></div>
+    <div class="qa-block">
+      <h3>Q14. 软膜怎么安装？</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/ruanmo_anzhuang.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/ruanmo_anzhuang.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block">
+      <h3>Q15. 软膜尺寸短了安装不了？</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/ruanmo_duanle.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/ruanmo_duanle.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+    <div class="qa-block">
+      <h3>Q16. 软膜划破怎么补救？</h3>
+      <p>请观看以下视频教程：</p>
+      <video controls style="width:100%;max-width:480px;border-radius:10px;margin:10px 0;" preload="metadata">
+        <source src="videos/ruanmo_bujiu.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请点击链接查看：<a href="videos/ruanmo_bujiu.mp4" target="_blank">观看视频</a>
+      </video>
+    </div>
+  </div>
+<div id="labu" class="content-view">
+    <div class="back-bar">
+      <button class="back-btn" onclick="showHome()">返回</button>
+      <div class="page-title">拉布灯箱</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q1. 拉布灯箱安装步骤</h3>
+      <ol class="steps">
+        <li>组装边框（注意拉布专用卡槽）</li>
+        <li>安装背板并固定</li>
+        <li>固定灯条 + 接线 + 测灯</li>
+        <li>将拉布画面卡入边框卡槽，拉紧固定</li>
+      </ol>
+      <div class="video-placeholder">📹 拉布灯箱安装视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q2. 截断的型材怎么装，哪个部分用哪种螺丝？</h3>
+      <img src="images/img9.png" alt="型材螺丝">
+    </div>
+  </div>
+
+  <!-- 3M灯箱 -->
+  <div id="m3" class="content-view">
+    <div class="back-bar">
+      <button class="back-btn" onclick="showHome()">返回</button>
+      <div class="page-title">3M灯箱</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q1. 3M灯箱安装要点</h3>
+      <ol class="steps">
+        <li>先组装边框并固定背板</li>
+        <li>安装灯条并测试</li>
+        <li>最后贴装3M专用画面（注意对齐与排气）</li>
+      </ol>
+      <div class="video-placeholder">📹 3M灯箱安装视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q2. 广告布尺寸怎么做短了？</h3>
+      <div class="video-placeholder">📹 处理视频稍后更新</div>
+    </div>
+  </div>
+
+  <!-- 通用问题 -->
+  <div id="common" class="content-view">
+    <div class="back-bar">
+      <button class="back-btn" onclick="showHome()">返回</button>
+      <div class="page-title">通用问题</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q1. 背板怎么装？背部用尖头螺丝固定</h3>
+      <div class="video-placeholder">📹 背板安装视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q2. 背板铺不平怎么解决？</h3>
+      <img src="images/img10.png" alt="背板铺不平">
+    </div>
+    <div class="qa-block">
+      <h3>Q3. 灯条过长或过短怎么排？</h3>
+      <img src="images/img11.png" alt="灯条排布">
+    </div>
+    <div class="qa-block">
+      <h3>Q4. 灯条过长 不够位置排怎么办？</h3>
+      <img src="images/img12.png" alt="灯条过长">
+    </div>
+    <div class="qa-block">
+      <h3>Q5. 没看到排灯图？</h3>
+      <img src="images/img13.png" alt="排灯图">
+    </div>
+    <div class="qa-block">
+      <h3>Q6. 室内灯箱怎么接线？</h3>
+      <p><strong>注意：</strong>室内和室外灯箱接线不一样。</p>
+      <div class="video-placeholder">📹 室内接线视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q7. 室外灯箱怎么接线？</h3>
+      <div class="video-placeholder">📹 室外接线视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q8. 插头的线怎么接？</h3>
+      <p>插头是选配件，需自备。</p>
+      <div class="video-placeholder">📹 插头接线视频稍后更新</div>
+    </div>
+    <div class="qa-block">
+      <h3>Q9. 用什么螺丝固定</h3>
+      <img src="images/img14.png" alt="螺丝固定">
+    </div>
+  </div>
+
+  <div class="footer">
+    如以上内容无法解决您的问题，请联系客服并提供订单号与问题描述，我们将尽快协助处理。
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function showHome() {
+    document.querySelectorAll('.content-view').forEach(function(v) { v.classList.remove('show'); });
+    var home = document.getElementById('home');
+    if (home) home.classList.add('show');
+    document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.remove('active'); });
+    window.scrollTo(0, 0);
+  }
+  window.showHome = showHome;
+
+  document.querySelectorAll('.type-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      document.querySelectorAll('.content-view').forEach(function(v) { v.classList.remove('show'); });
+      var type = this.getAttribute('data-type');
+      var target = document.getElementById(type);
+      if (target) {
+        target.classList.add('show');
+        window.scrollTo(0, 0);
+      }
+    });
+    // Also support touch
+    btn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      this.click();
+    });
+  });
+});
+</script>
+</body>
+</html>
